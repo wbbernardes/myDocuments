@@ -13,7 +13,7 @@
         <!--New User View Controller-->
         <scene sceneID="GvX-pj-nBF">
             <objects>
-                <viewController id="OIb-H0-xLU" customClass="NewUserViewController" customModule="MyDocuments" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OIb-H0-xLU" customClass="NewUserViewController" customModule="myDocuments" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Gq-zF-KuI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,13 +122,13 @@
         <!--User Table View Controller-->
         <scene sceneID="4Ax-Nn-MBm">
             <objects>
-                <tableViewController id="OvU-Nv-JAZ" customClass="UserTableViewController" customModule="MyDocuments" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="OvU-Nv-JAZ" customClass="UserTableViewController" customModule="myDocuments" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="siP-Fn-naw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="UserTableViewCell" rowHeight="117" id="L0X-pO-WlV" customClass="UserTableViewCell" customModule="MyDocuments" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="UserTableViewCell" rowHeight="117" id="L0X-pO-WlV" customClass="UserTableViewCell" customModule="myDocuments" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="117"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L0X-pO-WlV" id="9GB-U1-Te4">
@@ -158,8 +158,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="labelEmail" destination="ulV-OA-9jb" id="mGP-qS-zen"/>
-                                    <outlet property="labelName" destination="SlJ-8C-7GO" id="DHR-YK-TLv"/>
+                                    <outlet property="labelEmail" destination="ulV-OA-9jb" id="1h9-o1-7t2"/>
+                                    <outlet property="labelName" destination="SlJ-8C-7GO" id="Yha-m8-K89"/>
                                     <segue destination="gqF-Pg-a4h" kind="show" id="RGb-0p-BpO"/>
                                 </connections>
                             </tableViewCell>
@@ -184,7 +184,7 @@
         <!--Your documents-->
         <scene sceneID="9oy-X8-gHz">
             <objects>
-                <tableViewController id="gqF-Pg-a4h" customClass="DocumentTableViewController" customModule="MyDocuments" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="gqF-Pg-a4h" customClass="DocumentTableViewController" customModule="myDocuments" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="tCn-vK-3x2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

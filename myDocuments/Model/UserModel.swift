@@ -13,11 +13,11 @@ public class UserModel: NSCoding {
     
     // MARK: Declaration for string constants to be used to decode and also serialize.
     private struct SerializationKeys {
-        static let nome = "nome"
-        static let email = "email"
-        static let id = "id"
-        static let telefone = "telefone"
-        static let createdat = "createdat"
+        static let nome = "NOME"
+        static let email = "EMAIL"
+        static let id = "ID"
+        static let telefone = "TELEFONE"
+        static let createdat = "CREATEDAT"
     }
     
     // MARK: Properties
