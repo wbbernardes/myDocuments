@@ -15,7 +15,8 @@ class UserController: NSObject {
     
     func loadUsers(callback: @escaping CompletionHandler) {
         ServiceUser().loadUsers { (result) in
-            callback(result)
+            self.userModel = result as! [UserModel]
+            callback(true)
         }
     }
     
@@ -24,13 +25,13 @@ class UserController: NSObject {
     }
     
     func getNome(_ index: Int) -> String {
-        guard let nome = userModel[index].nome else { return "" }
-        return nome
+        if let nome = userModel[index].nome{ return nome } else { return "" }
+        
     }
     
     func getEmail(_ index: Int) -> String {
-        guard let email = userModel[index].email else { return "" }
-        return email
+        if let email = userModel[index].email { return email } else { return "" }
+        
     }
     
 }

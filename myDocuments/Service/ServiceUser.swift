@@ -26,7 +26,7 @@ class ServiceUser: NSObject {
                     let userObject = UserModel(json:JSON(user))
                     self.userModel.append(userObject)
                 }
-                callback(true)
+                callback(self.userModel)
                 return
             } else {
                 print("error calling GET on /users")

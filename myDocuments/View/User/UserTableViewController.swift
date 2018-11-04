@@ -21,15 +21,15 @@ class UserTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         userController.loadUsers { result in
-            if result as! Bool {
+//            if result as! Bool {
                 self.tableView.reloadData()
-                print(result)
-            } else {
+//                print(result as Any)
+//            } else {
                 //                let alert = UIAlertController(title: "Erro", message: "Erro na requisição", preferredStyle: .alert)
                 //                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 //                self.present(alert, animated: true)
                 print("deu erro")
-            }
+//            }
         }
 
     }
@@ -48,7 +48,7 @@ class UserTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return userController.getNumberElements()
+        return userController.numberOfUsers
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
