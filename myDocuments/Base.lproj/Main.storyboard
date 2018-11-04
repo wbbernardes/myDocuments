@@ -70,7 +70,7 @@
                                 <rect key="frame" x="112" y="411.5" width="151" height="30"/>
                                 <state key="normal" title="Cadastrar"/>
                                 <connections>
-                                    <action selector="register:" destination="OIb-H0-xLU" eventType="touchUpInside" id="RNG-bK-QBB"/>
+                                    <action selector="register:" destination="OIb-H0-xLU" eventType="touchUpInside" id="RO3-77-4p3"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GU-Vh-gat">
@@ -108,10 +108,10 @@
                         <viewLayoutGuide key="safeArea" id="UTb-py-2eL"/>
                     </view>
                     <connections>
-                        <outlet property="buttonAddUser" destination="7Eq-hQ-7zA" id="tLR-jO-Phu"/>
-                        <outlet property="textEmail" destination="7BL-Zr-r6Y" id="5LO-DF-m8X"/>
-                        <outlet property="textName" destination="ZwQ-zy-wYF" id="BGN-cf-gVG"/>
-                        <outlet property="textTelefone" destination="sAn-vz-Qob" id="grL-p9-Z8e"/>
+                        <outlet property="buttonAddUser" destination="7Eq-hQ-7zA" id="d9h-jH-WFv"/>
+                        <outlet property="textEmail" destination="7BL-Zr-r6Y" id="Wt0-6e-sMS"/>
+                        <outlet property="textName" destination="ZwQ-zy-wYF" id="GVz-g7-Loq"/>
+                        <outlet property="textTelefone" destination="sAn-vz-Qob" id="N9l-o8-Wmh"/>
                         <segue destination="gqF-Pg-a4h" kind="show" identifier="yourDocument" id="8h7-8H-F35"/>
                     </connections>
                 </viewController>
@@ -345,6 +345,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sxn-Ms-M1s"/>
-        <segue reference="RGb-0p-BpO"/>
+        <segue reference="8h7-8H-F35"/>
     </inferredMetricsTieBreakers>
 </document>

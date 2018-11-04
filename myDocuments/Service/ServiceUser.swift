@@ -17,6 +17,21 @@ class ServiceUser: NSObject {
     let url = "http://localhost:3000/users"
     var userModel: [UserModel] = []
     
+    let headers: HTTPHeaders = [
+        "Accept": "application/json"
+    ]
+    func addUsers(user: UserModel?) -> Bool {
+        if let userObject = user {
+            Alamofire.request(url, method: .post, parameters: userObject.dictionaryRepresentation(), encoding: JSONEncoding.default, headers: headers).response { (result) in
+                print(result)
+            }
+            self.userModel.append(userObject)
+            return true
+        }
+        
+        return false
+    }
+    
     public func loadUsers(callback: @escaping CompletionHandler){
         Alamofire.request(url).responseJSON { response in
             print(response.result)
@@ -26,7 +41,8 @@ class ServiceUser: NSObject {
                     let userObject = UserModel(json:JSON(user))
                     self.userModel.append(userObject)
                 }
-                callback(self.userModel)
+                let sortedUser = self.userModel.sorted { $0.nome ?? "z" < $1.nome ?? "z" }
+                callback(sortedUser)
                 return
             } else {
                 print("error calling GET on /users")

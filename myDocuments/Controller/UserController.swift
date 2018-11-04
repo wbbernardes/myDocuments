@@ -11,7 +11,22 @@ import Foundation
 class UserController: NSObject {
     
     var userModel: [UserModel] = []
-    var numberOfUsers: Int { return userModel.count }
+    
+    
+    func saveUser(userName: String?, userEmail: String?, userPhone: String? ) -> Bool {
+        
+        if let nome = userName, let email  = userEmail, let phone = userPhone {
+            
+            let objUser = UserModel(object: (Any).self)
+            objUser.nome = nome
+            objUser.email = email
+            objUser.telefone = phone
+            objUser.createdat = "\(Date().timeIntervalSinceNow)"
+            
+            return ServiceUser().addUsers(user: objUser)
+        }
+        return false
+    }
     
     func loadUsers(callback: @escaping CompletionHandler) {
         ServiceUser().loadUsers { (result) in
@@ -25,13 +40,13 @@ class UserController: NSObject {
     }
     
     func getNome(_ index: Int) -> String {
-        if let nome = userModel[index].nome{ return nome } else { return "" }
-        
+        guard let nome = userModel[index].nome else { return "" }
+        return nome
     }
     
     func getEmail(_ index: Int) -> String {
-        if let email = userModel[index].email { return email } else { return "" }
-        
+        guard let email = userModel[index].email else { return "" }
+        return email
     }
     
 }
