@@ -49,6 +49,13 @@ class UserController: NSObject {
         return email
     }
     
+    func selectedID() -> Int {
+        if let id = documentObject.userid {
+            return id
+        }
+        return 0
+    }
+    
     func didSelectUser(id : Int){
         documentObject.userid = id
     }

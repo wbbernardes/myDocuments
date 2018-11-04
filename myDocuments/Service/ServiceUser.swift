@@ -38,8 +38,8 @@ class ServiceUser: NSObject {
                     let userObject = UserModel(json:JSON(user))
                     self.userModel.append(userObject)
                 }
-                let sortedUser = self.userModel.sorted { $0.nome ?? "z" < $1.nome ?? "z" }
-                callback(sortedUser)
+                //let sortedUser = self.userModel.sorted { $0.nome ?? "z" < $1.nome ?? "z" }
+                callback(self.userModel)
                 return
             } else {
                 print("error calling GET on /users")

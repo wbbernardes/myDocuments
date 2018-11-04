@@ -12,20 +12,24 @@ class DocumentTableViewController: UITableViewController {
 
     var listFilterDocuments = [DocumentModel]()
     let documentController = DocumentController()
+    var userID: Int?
     
     @IBOutlet weak var searchBarDocument: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //searchBar
+        searchBarDocument.delegate = self
+        self.searchBarDocument.showsCancelButton = false
+        self.searchBarDocument.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         loadDocuments()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.tableView.reloadData()
     }
     
     
@@ -67,7 +71,7 @@ class DocumentTableViewController: UITableViewController {
 //    }
     
     func loadDocuments() {
-        documentController.loadDocuments { (result) in
+        documentController.loadDocuments(userID: userID!) { (result) in
             if let result = result as? [DocumentModel] {
                 self.listFilterDocuments = result
                 self.tableView.reloadData()
@@ -84,7 +88,7 @@ class DocumentTableViewController: UITableViewController {
 extension DocumentTableViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        listFilterDocuments = documentController.filterListDocuments(name: searchText, documents: self.listFilterDocuments)
+        listFilterDocuments = documentController.filterListDocuments(name: searchText, documents: listFilterDocuments)
         self.tableView.reloadData()
     }
 }

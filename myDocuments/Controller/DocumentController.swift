@@ -12,8 +12,8 @@ class DocumentController: NSObject {
     
     var documentModel: [DocumentModel] = []
     
-    func loadDocuments(callback: @escaping CompletionHandler) {
-        ServiceDocument().loadDocument { (result) in
+    func loadDocuments(userID: Int ,callback: @escaping CompletionHandler) {
+        ServiceDocument().loadDocument(userID: userID) { (result) in
             self.documentModel = result as! [DocumentModel]
             callback(self.filterListDocuments(name: "", documents: self.documentModel))
         }

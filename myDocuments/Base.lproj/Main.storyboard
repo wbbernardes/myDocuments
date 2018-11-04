@@ -213,7 +213,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="labelNome" destination="T2Y-ym-dk6" id="KZu-fB-jy2"/>
-                                    <outlet property="nameLabel" destination="T2Y-ym-dk6" id="zPM-nT-4fo"/>
                                     <segue destination="lV4-aX-5AO" kind="show" identifier="ShowDetail" id="sxn-Ms-M1s"/>
                                 </connections>
                             </tableViewCell>

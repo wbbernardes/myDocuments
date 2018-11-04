@@ -62,5 +62,11 @@ class UserTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         userController.didSelectUser(id: indexPath.row + 1)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? DocumentTableViewController {
+            vc.userID = userController.selectedID()
+        }
+    }
 
 }
