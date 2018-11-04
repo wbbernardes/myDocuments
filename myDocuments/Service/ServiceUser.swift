@@ -17,12 +17,9 @@ class ServiceUser: NSObject {
     let url = "http://localhost:3000/users"
     var userModel: [UserModel] = []
     
-    let headers: HTTPHeaders = [
-        "Accept": "application/json"
-    ]
     func addUsers(user: UserModel?) -> Bool {
         if let userObject = user {
-            Alamofire.request(url, method: .post, parameters: userObject.dictionaryRepresentation(), encoding: JSONEncoding.default, headers: headers).response { (result) in
+            Alamofire.request(url, method: .post, parameters: userObject.dictionaryRepresentation(), encoding: JSONEncoding.default, headers: nil).response { (result) in
                 print(result)
             }
             self.userModel.append(userObject)
