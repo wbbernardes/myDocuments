@@ -260,7 +260,7 @@
         <!--New Archive-->
         <scene sceneID="Qjv-Np-hvb">
             <objects>
-                <viewController id="lV4-aX-5AO" customClass="DocumentViewController" customModule="MyDocuments" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lV4-aX-5AO" customClass="DocumentViewController" customModule="myDocuments" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cu9-4w-fVM"/>
                         <viewControllerLayoutGuide type="bottom" id="89b-Vr-HJ6"/>
@@ -280,7 +280,7 @@
                                 <items>
                                     <barButtonItem systemItem="action" id="dgE-Rm-k7w">
                                         <connections>
-                                            <action selector="buttonShared:" destination="lV4-aX-5AO" id="3SM-ad-H1h"/>
+                                            <action selector="buttonShared:" destination="lV4-aX-5AO" id="fkg-Hr-mFW"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -315,19 +315,19 @@
                     <navigationItem key="navigationItem" title="New Archive" id="9Ea-7J-ISe">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="PnC-Sa-9r4">
                             <connections>
-                                <action selector="cancel:" destination="lV4-aX-5AO" id="6C4-UQ-6Ch"/>
+                                <action selector="cancel:" destination="lV4-aX-5AO" id="ryQ-Py-dxV"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="xkP-ej-qSw">
                             <connections>
-                                <action selector="registerDocument:" destination="lV4-aX-5AO" id="DMc-2k-XRf"/>
+                                <action selector="registerDocument:" destination="lV4-aX-5AO" id="vdC-Dl-ncj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="nameTextField" destination="fO0-oZ-Sao" id="Blg-Ks-CpA"/>
+                        <outlet property="nameTextField" destination="fO0-oZ-Sao" id="P5f-ZN-aWU"/>
                         <outlet property="photoImageView" destination="v2w-Sv-FoY" id="aBB-0C-xLh"/>
-                        <outlet property="saveButton" destination="xkP-ej-qSw" id="oqT-1i-IoZ"/>
+                        <outlet property="saveButton" destination="xkP-ej-qSw" id="kgd-t1-wYq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2O6-ov-XUW" sceneMemberID="firstResponder"/>
@@ -345,6 +345,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sxn-Ms-M1s"/>
-        <segue reference="8h7-8H-F35"/>
+        <segue reference="RGb-0p-BpO"/>
     </inferredMetricsTieBreakers>
 </document>

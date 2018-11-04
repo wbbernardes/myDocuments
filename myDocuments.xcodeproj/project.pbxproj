@@ -22,13 +22,13 @@
 		B16688C9218E313800E4AE08 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16688C8218E313800E4AE08 /* NewUserViewController.swift */; };
 		B16688CB218E315400E4AE08 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16688CA218E315400E4AE08 /* UserTableViewController.swift */; };
 		B16688CD218E316200E4AE08 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16688CC218E316200E4AE08 /* UserTableViewCell.swift */; };
-		B16688D1218E31E600E4AE08 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16688D0218E31E600E4AE08 /* PhotoViewController.swift */; };
 		B16688D4218E320300E4AE08 /* DocumentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16688D3218E320300E4AE08 /* DocumentTableViewController.swift */; };
 		B16688D6218E321100E4AE08 /* DocumentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16688D5218E321100E4AE08 /* DocumentTableViewCell.swift */; };
 		B16688D9218E32E400E4AE08 /* DocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16688D8218E32E400E4AE08 /* DocumentController.swift */; };
 		B16688DB218E32EE00E4AE08 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16688DA218E32EE00E4AE08 /* UserController.swift */; };
 		B16688DE218E334D00E4AE08 /* ServiceDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16688DD218E334D00E4AE08 /* ServiceDocument.swift */; };
 		B16688E0218E335700E4AE08 /* ServiceUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16688DF218E335700E4AE08 /* ServiceUser.swift */; };
+		B16688E5218F928C00E4AE08 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16688E4218F928C00E4AE08 /* DocumentViewController.swift */; };
 		BAA803A71D5361FAA2AAFDC0 /* Pods_myDocumentsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E147E3728E25C14F0059B3 /* Pods_myDocumentsTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,13 +74,13 @@
 		B16688C8218E313800E4AE08 /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		B16688CA218E315400E4AE08 /* UserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		B16688CC218E316200E4AE08 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
-		B16688D0218E31E600E4AE08 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		B16688D3218E320300E4AE08 /* DocumentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTableViewController.swift; sourceTree = "<group>"; };
 		B16688D5218E321100E4AE08 /* DocumentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTableViewCell.swift; sourceTree = "<group>"; };
 		B16688D8218E32E400E4AE08 /* DocumentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentController.swift; sourceTree = "<group>"; };
 		B16688DA218E32EE00E4AE08 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		B16688DD218E334D00E4AE08 /* ServiceDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDocument.swift; sourceTree = "<group>"; };
 		B16688DF218E335700E4AE08 /* ServiceUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceUser.swift; sourceTree = "<group>"; };
+		B16688E4218F928C00E4AE08 /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
 		BC8B8D796954E0558B0A29F5 /* Pods_myDocumentsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myDocumentsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4E147E3728E25C14F0059B3 /* Pods_myDocumentsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myDocumentsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75F2378EB012479DB265520 /* Pods-myDocumentsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myDocumentsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-myDocumentsTests/Pods-myDocumentsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -196,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				B16688CF218E317600E4AE08 /* User */,
-				B16688D2218E31ED00E4AE08 /* Photo */,
 				B16688D7218E322100E4AE08 /* Document */,
 			);
 			path = View;
@@ -212,19 +211,12 @@
 			path = User;
 			sourceTree = "<group>";
 		};
-		B16688D2218E31ED00E4AE08 /* Photo */ = {
-			isa = PBXGroup;
-			children = (
-				B16688D0218E31E600E4AE08 /* PhotoViewController.swift */,
-			);
-			path = Photo;
-			sourceTree = "<group>";
-		};
 		B16688D7218E322100E4AE08 /* Document */ = {
 			isa = PBXGroup;
 			children = (
 				B16688D3218E320300E4AE08 /* DocumentTableViewController.swift */,
 				B16688D5218E321100E4AE08 /* DocumentTableViewCell.swift */,
+				B16688E4218F928C00E4AE08 /* DocumentViewController.swift */,
 			);
 			path = Document;
 			sourceTree = "<group>";
@@ -492,6 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B16688E5218F928C00E4AE08 /* DocumentViewController.swift in Sources */,
 				B16688DE218E334D00E4AE08 /* ServiceDocument.swift in Sources */,
 				B16688C7218DF02A00E4AE08 /* PhotoModel.swift in Sources */,
 				B16688CD218E316200E4AE08 /* UserTableViewCell.swift in Sources */,
@@ -505,7 +498,6 @@
 				B1668891218DE60600E4AE08 /* AppDelegate.swift in Sources */,
 				B16688CB218E315400E4AE08 /* UserTableViewController.swift in Sources */,
 				B16688C9218E313800E4AE08 /* NewUserViewController.swift in Sources */,
-				B16688D1218E31E600E4AE08 /* PhotoViewController.swift in Sources */,
 				B16688D4218E320300E4AE08 /* DocumentTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

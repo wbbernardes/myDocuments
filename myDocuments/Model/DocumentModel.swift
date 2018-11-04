@@ -18,6 +18,7 @@ public class DocumentModel: NSCoding {
         static let id = "ID"
         static let createdat = "CREATEDAT"
         static let nome = "NOME"
+        static let photoid = "PHOTOID"
     }
     
     // MARK: Properties
@@ -26,6 +27,7 @@ public class DocumentModel: NSCoding {
     public var id: Int?
     public var createdat: String?
     public var nome: String?
+    public var photoid: Int?
     
     // MARK: SwiftyJSON Initializers
     /// Initiates the instance based on the object.
@@ -45,6 +47,7 @@ public class DocumentModel: NSCoding {
         id = json[SerializationKeys.id].int
         createdat = json[SerializationKeys.createdat].string
         nome = json[SerializationKeys.nome].string
+        photoid = json[SerializationKeys.photoid].int
     }
     
     /// Generates description of the object in the form of a NSDictionary.
@@ -57,6 +60,7 @@ public class DocumentModel: NSCoding {
         if let value = id { dictionary[SerializationKeys.id] = value }
         if let value = createdat { dictionary[SerializationKeys.createdat] = value }
         if let value = nome { dictionary[SerializationKeys.nome] = value }
+        if let value = photoid { dictionary[SerializationKeys.photoid] = value }
         return dictionary
     }
     
@@ -67,6 +71,7 @@ public class DocumentModel: NSCoding {
         self.id = aDecoder.decodeObject(forKey: SerializationKeys.id) as? Int
         self.createdat = aDecoder.decodeObject(forKey: SerializationKeys.createdat) as? String
         self.nome = aDecoder.decodeObject(forKey: SerializationKeys.nome) as? String
+        self.photoid = aDecoder.decodeObject(forKey: SerializationKeys.photoid) as? Int
     }
     
     public func encode(with aCoder: NSCoder) {
@@ -75,6 +80,7 @@ public class DocumentModel: NSCoding {
         aCoder.encode(id, forKey: SerializationKeys.id)
         aCoder.encode(createdat, forKey: SerializationKeys.createdat)
         aCoder.encode(nome, forKey: SerializationKeys.nome)
+        aCoder.encode(photoid, forKey: SerializationKeys.photoid)
     }
     
 }

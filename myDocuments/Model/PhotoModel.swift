@@ -13,17 +13,15 @@ public class PhotoModel: NSCoding {
     
     // MARK: Declaration for string constants to be used to decode and also serialize.
     private struct SerializationKeys {
-        static let img = "img"
-        static let createdat = "createdat"
-        static let id = "id"
-        static let documentid = "documentid"
+        static let img = "IMG"
+        static let createdat = "CREATEDAT"
+        static let id = "ID"
     }
     
     // MARK: Properties
     public var img: String?
     public var createdat: String?
     public var id: Int?
-    public var documentid: Int?
     
     // MARK: SwiftyJSON Initializers
     /// Initiates the instance based on the object.
@@ -41,7 +39,6 @@ public class PhotoModel: NSCoding {
         img = json[SerializationKeys.img].string
         createdat = json[SerializationKeys.createdat].string
         id = json[SerializationKeys.id].int
-        documentid = json[SerializationKeys.documentid].int
     }
     
     /// Generates description of the object in the form of a NSDictionary.
@@ -52,7 +49,6 @@ public class PhotoModel: NSCoding {
         if let value = img { dictionary[SerializationKeys.img] = value }
         if let value = createdat { dictionary[SerializationKeys.createdat] = value }
         if let value = id { dictionary[SerializationKeys.id] = value }
-        if let value = documentid { dictionary[SerializationKeys.documentid] = value }
         return dictionary
     }
     
@@ -61,14 +57,12 @@ public class PhotoModel: NSCoding {
         self.img = aDecoder.decodeObject(forKey: SerializationKeys.img) as? String
         self.createdat = aDecoder.decodeObject(forKey: SerializationKeys.createdat) as? String
         self.id = aDecoder.decodeObject(forKey: SerializationKeys.id) as? Int
-        self.documentid = aDecoder.decodeObject(forKey: SerializationKeys.documentid) as? Int
     }
     
     public func encode(with aCoder: NSCoder) {
         aCoder.encode(img, forKey: SerializationKeys.img)
         aCoder.encode(createdat, forKey: SerializationKeys.createdat)
         aCoder.encode(id, forKey: SerializationKeys.id)
-        aCoder.encode(documentid, forKey: SerializationKeys.documentid)
     }
     
 }

@@ -10,6 +10,7 @@ import UIKit
 
 class DocumentTableViewController: UITableViewController {
 
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     var listFilterDocuments = [DocumentModel]()
     let documentController = DocumentController()
     var userID: Int?
@@ -22,6 +23,10 @@ class DocumentTableViewController: UITableViewController {
         searchBarDocument.delegate = self
         self.searchBarDocument.showsCancelButton = false
         self.searchBarDocument.delegate = self
+        
+//        definesPresentationContext = true
+//
+//        self.activeActivityIndicator()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,24 +61,32 @@ class DocumentTableViewController: UITableViewController {
 
     
     // Override to support conditional editing of the table view.
-//    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-//
-//    // Override to support editing the table view.
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            // Delete the row from the data source
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        } else if editingStyle == .insert {
-//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-//        }
-//    }
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            documentController.deleteDocument(i: indexPath.row) { (result) in
+                print(result as Any)
+                if result as! Bool {
+                    self.loadDocuments()
+                    self.tableView.reloadData()
+                } else {
+                    let alert = UIAlertController(title: "Erro", message: "Erro na requisição", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                }
+            }
+        }
+    }
     
     func loadDocuments() {
         documentController.loadDocuments(userID: userID!) { (result) in
             if let result = result as? [DocumentModel] {
                 self.listFilterDocuments = result
+                self.activityIndicator.stopAnimating()
                 self.tableView.reloadData()
             } else {
                 let alert = UIAlertController(title: "Erro", message: "Erro na requisição", preferredStyle: .alert)
@@ -81,6 +94,30 @@ class DocumentTableViewController: UITableViewController {
                 self.present(alert, animated: true)
             }
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch (segue.identifier ?? "") {
+        case "AddItem":
+            break
+        case "ShowDetail":
+            guard let DocumentDetailViewController = segue.destination as? DocumentViewController, let selectedDocumentCell = sender as? DocumentTableViewCell, let indexPath = tableView.indexPath(for: selectedDocumentCell) else { fatalError("Unexpected destination: \(segue.destination)") }
+            let selectedDocument = listFilterDocuments[indexPath.row]
+            DocumentDetailViewController.document = selectedDocument
+            
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier ?? "")")
+        }
+    }
+    
+    //Activity Indicator
+    func activeActivityIndicator() {
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = UIActivityIndicatorView.Style.gray
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
     }
 
 }
