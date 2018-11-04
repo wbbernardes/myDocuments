@@ -195,7 +195,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DocumentTableViewCell" rowHeight="90" id="1RR-cg-eJ2" customClass="DocumentTableViewCell" customModule="MyDocuments" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DocumentTableViewCell" rowHeight="90" id="1RR-cg-eJ2" customClass="DocumentTableViewCell" customModule="myDocuments" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1RR-cg-eJ2" id="KIb-1p-6KX">
@@ -212,6 +212,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="labelNome" destination="T2Y-ym-dk6" id="KZu-fB-jy2"/>
                                     <outlet property="nameLabel" destination="T2Y-ym-dk6" id="zPM-nT-4fo"/>
                                     <segue destination="lV4-aX-5AO" kind="show" identifier="ShowDetail" id="sxn-Ms-M1s"/>
                                 </connections>
@@ -231,7 +232,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchBarDocument" destination="o1o-4M-ery" id="WGy-Mg-VG4"/>
+                        <outlet property="searchBarDocument" destination="o1o-4M-ery" id="vbA-aj-dG1"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OBp-dD-R6A" userLabel="First Responder" sceneMemberID="firstResponder"/>

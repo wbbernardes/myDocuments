@@ -13,11 +13,11 @@ public class DocumentModel: NSCoding {
     
     // MARK: Declaration for string constants to be used to decode and also serialize.
     private struct SerializationKeys {
-        static let data = "data"
-        static let userid = "userid"
-        static let id = "id"
-        static let createdat = "createdat"
-        static let nome = "nome"
+        static let data = "DATA"
+        static let userid = "USERID"
+        static let id = "ID"
+        static let createdat = "CREATEDAT"
+        static let nome = "NOME"
     }
     
     // MARK: Properties

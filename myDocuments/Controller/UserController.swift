@@ -11,7 +11,7 @@ import Foundation
 class UserController: NSObject {
     
     var userModel: [UserModel] = []
-    
+    var documentObject = DocumentModel(object: (Any).self)
     
     func saveUser(userName: String?, userEmail: String?, userPhone: String? ) -> Bool {
         
@@ -47,6 +47,10 @@ class UserController: NSObject {
     func getEmail(_ index: Int) -> String {
         guard let email = userModel[index].email else { return "" }
         return email
+    }
+    
+    func didSelectUser(id : Int){
+        documentObject.userid = id
     }
     
 }

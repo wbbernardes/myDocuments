@@ -29,7 +29,6 @@
 		B16688DB218E32EE00E4AE08 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16688DA218E32EE00E4AE08 /* UserController.swift */; };
 		B16688DE218E334D00E4AE08 /* ServiceDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16688DD218E334D00E4AE08 /* ServiceDocument.swift */; };
 		B16688E0218E335700E4AE08 /* ServiceUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16688DF218E335700E4AE08 /* ServiceUser.swift */; };
-		B16688E2218E33C900E4AE08 /* ServicePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16688E1218E33C900E4AE08 /* ServicePhoto.swift */; };
 		BAA803A71D5361FAA2AAFDC0 /* Pods_myDocumentsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E147E3728E25C14F0059B3 /* Pods_myDocumentsTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,7 +81,6 @@
 		B16688DA218E32EE00E4AE08 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		B16688DD218E334D00E4AE08 /* ServiceDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDocument.swift; sourceTree = "<group>"; };
 		B16688DF218E335700E4AE08 /* ServiceUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceUser.swift; sourceTree = "<group>"; };
-		B16688E1218E33C900E4AE08 /* ServicePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePhoto.swift; sourceTree = "<group>"; };
 		BC8B8D796954E0558B0A29F5 /* Pods_myDocumentsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myDocumentsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4E147E3728E25C14F0059B3 /* Pods_myDocumentsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myDocumentsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75F2378EB012479DB265520 /* Pods-myDocumentsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myDocumentsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-myDocumentsTests/Pods-myDocumentsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -245,7 +243,6 @@
 			children = (
 				B16688DD218E334D00E4AE08 /* ServiceDocument.swift */,
 				B16688DF218E335700E4AE08 /* ServiceUser.swift */,
-				B16688E1218E33C900E4AE08 /* ServicePhoto.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -503,7 +500,6 @@
 				B16688D6218E321100E4AE08 /* DocumentTableViewCell.swift in Sources */,
 				B16688DB218E32EE00E4AE08 /* UserController.swift in Sources */,
 				B16688E0218E335700E4AE08 /* ServiceUser.swift in Sources */,
-				B16688E2218E33C900E4AE08 /* ServicePhoto.swift in Sources */,
 				B16688C5218DEF4500E4AE08 /* DocumentModel.swift in Sources */,
 				B16688C2218DED3700E4AE08 /* UserModel.swift in Sources */,
 				B1668891218DE60600E4AE08 /* AppDelegate.swift in Sources */,
