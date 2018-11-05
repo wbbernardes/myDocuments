@@ -25,29 +25,32 @@ class DocumentController: NSObject {
         }
     }
     
-    func saveDocument(userID: Int, name: String, photo: Data, id: Int?, callback: @escaping CompletionHandler) {
-        if id != nil {
-            let photoObject = PhotoModel(object: (Any).self)
-            photoObject.img = encodeImageToBase64(imageData: photo)
-            ServiceDocument().addPhoto(photo: photoObject) { (response) in
-                if response as! Int > 0 {
-                    let documentObject = DocumentModel.init(object: (Any).self)
-                    documentObject.nome = name
-                    documentObject.photoid = response as? Int
-                    //documentObject.userid = userID
-                    documentObject.data = "\(Date().timeIntervalSinceNow)"
-                    documentObject.createdat = "\(Date().timeIntervalSinceNow)"
-                    ServiceDocument().addDocument(document: documentObject, callback: { (result) in
-                        if result != nil {
-                            self.documentModel.append(result as! DocumentModel)
-                            callback(true)
-                        } else {
-                            callback(false)
-                        }
-                    })
-                    
-                }
+    func saveDocument(userID: Int, name: String, photo: Data, callback: @escaping CompletionHandler) {
+        
+        let photoObject = PhotoModel.init(object: (Any).self)
+        photoObject.img = encodeImageToBase64(imageData: photo)
+        photoObject.createdat = "\(Date().timeIntervalSinceNow)"
+//        print(photoObject.img)
+        
+        ServiceDocument().addPhoto(photo: photoObject) { (response) in
+            if response as! Int > 0 {
+                let documentObject = DocumentModel.init(object: (Any).self)
+                documentObject.nome = name
+                documentObject.photoid = response as? Int
+                documentObject.userid = userID
+                documentObject.data = "\(Date().timeIntervalSinceNow)"
+                documentObject.createdat = "\(Date().timeIntervalSinceNow)"
+                ServiceDocument().addDocument(document: documentObject, callback: { (result) in
+                    if result != nil {
+                        self.documentModel.append(result as! DocumentModel)
+                        callback(true)
+                    } else {
+                        callback(false)
+                    }
+                })
+                
             }
+            
         }
     }
     

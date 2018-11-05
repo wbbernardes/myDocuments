@@ -99,6 +99,9 @@ class DocumentTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch (segue.identifier ?? "") {
         case "AddItem":
+            if let vc = segue.destination as? DocumentViewController {
+                vc.userID = userID
+            }
             break
         case "ShowDetail":
             guard let DocumentDetailViewController = segue.destination as? DocumentViewController, let selectedDocumentCell = sender as? DocumentTableViewCell, let indexPath = tableView.indexPath(for: selectedDocumentCell) else { fatalError("Unexpected destination: \(segue.destination)") }

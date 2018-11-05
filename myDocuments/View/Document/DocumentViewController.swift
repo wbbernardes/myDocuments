@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DocumentViewController: UIViewController {
+class DocumentViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
@@ -22,6 +22,8 @@ class DocumentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        nameTextField.delegate = self
+        
         if let document = document {
             navigationItem.title = document.nome
             if let photoid = document.photoid {
@@ -79,6 +81,26 @@ class DocumentViewController: UIViewController {
     
     @IBAction func registerDocument(_ sender: UIBarButtonItem) {
         //registro
+        var dataPhoto = Data()
+        let name = nameTextField.text ?? ""
+        if let photo = photoImageView.image {
+            dataPhoto = photo.pngData()!
+        }
+        var alert = UIAlertController()
+        documentConroller.saveDocument(userID: userID!, name: name, photo: dataPhoto) { (result) in
+            
+            if result as! Bool {
+                alert = UIAlertController(title: "", message: "Documento salvo com sucesso", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (alertAction) in
+                    self.navigationController?.popViewController(animated: true)
+                }))
+            } else {
+                alert = UIAlertController(title: "Erro", message: "Erro ao salvar o documento", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (alertAction) in
+                }))
+            }
+            self.present(alert, animated: true)
+        }
     }
     
     @IBAction func buttonShared(_ sender: Any) {

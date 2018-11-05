@@ -43,6 +43,8 @@
 	</array>
     <key>NSCameraUsageDescription</key>
     <string>This app will use camera.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>This app will use library.</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

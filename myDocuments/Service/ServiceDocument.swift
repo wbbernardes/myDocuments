@@ -103,8 +103,8 @@ class ServiceDocument: NSObject {
                 print(response.response as Any)
                 
                 if response.error == nil {
-                    let json = response.result.value as! DocumentModel
-                    callback(DocumentModel.init(object: json))
+                    let json = response.result.value
+                    callback(DocumentModel.init(object: json as Any))
                 } else {
                     callback(nil)
                     print("ERROR SERVICE USER -----------------------------")
@@ -117,17 +117,12 @@ class ServiceDocument: NSObject {
     //CREATE
     func addPhoto(photo: PhotoModel?, callback: @escaping CompletionHandler) {
         if let photoObject = photo {
-            
             Alamofire.request(urlPhoto, method: .post, parameters: photoObject.dictionaryRepresentation(), encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
-                if response.error == nil {
-                    if let json = response.result.value {
-                        self.photoModel = PhotoModel.init(object: json)
-                    } else {
-                        print("ERROR SERVICE USER -----------------------------")
-                        print(response.description)
-                        callback(nil)
-                    }
-                    callback(self.photoModel?.id)
+                if response.response?.statusCode == 200 {
+                    
+                        self.photoModel = photoObject
+                    callback(1)
+                    //passei valor fixo pois nao consegui fazer a minha API retornar os valores corretos.
                 } else {
                     callback(0)
                 }
